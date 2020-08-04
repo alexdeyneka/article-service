@@ -1,9 +1,7 @@
 package com.article.service.controller;
 
 import com.article.service.dto.UserDTO;
-import com.article.service.dto.UserMapper;
 import com.article.service.entity.Color;
-import com.article.service.entity.User;
 import com.article.service.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -49,8 +47,8 @@ public class UserController {
     }
 
     @PostMapping("/save")
-    public ResponseEntity<UserDTO> saveUser(@RequestParam User user) {
-        UserDTO userDTO = userService.saveUser(UserMapper.INSTANCE.userToUserDTO(user));
-        return ResponseEntity.status(HttpStatus.CREATED).body(userDTO);
+    public ResponseEntity<UserDTO> saveUser(@RequestBody UserDTO userDTO) {
+        UserDTO savedUser = userService.saveUser(userDTO);
+        return ResponseEntity.status(HttpStatus.CREATED).body(savedUser);
     }
 }
