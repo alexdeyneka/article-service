@@ -1,9 +1,9 @@
 package com.article.service.utils;
 
 import com.article.service.dto.ArticleDTO;
-import com.article.service.dto.ArticleMapper;
+import com.article.service.dto.mapper.ArticleMapper;
 import com.article.service.dto.UserDTO;
-import com.article.service.dto.UserMapper;
+import com.article.service.dto.mapper.UserMapper;
 import com.article.service.entity.Article;
 import com.article.service.entity.Color;
 import com.article.service.entity.User;

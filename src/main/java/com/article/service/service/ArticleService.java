@@ -1,7 +1,7 @@
 package com.article.service.service;
 
 import com.article.service.dto.ArticleDTO;
-import com.article.service.dto.ArticleMapper;
+import com.article.service.dto.mapper.ArticleMapper;
 import com.article.service.entity.Article;
 import com.article.service.repository.ArticleRepo;
 import lombok.RequiredArgsConstructor;

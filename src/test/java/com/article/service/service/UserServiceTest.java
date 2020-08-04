@@ -1,7 +1,7 @@
 package com.article.service.service;
 
 import com.article.service.dto.UserDTO;
-import com.article.service.dto.UserMapper;
+import com.article.service.dto.mapper.UserMapper;
 import com.article.service.entity.Color;
 import com.article.service.entity.User;
 import com.article.service.repository.UserRepo;

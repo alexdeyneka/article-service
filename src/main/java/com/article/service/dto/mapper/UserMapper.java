@@ -1,5 +1,6 @@
-package com.article.service.dto;
+package com.article.service.dto.mapper;
 
+import com.article.service.dto.UserDTO;
 import com.article.service.entity.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
