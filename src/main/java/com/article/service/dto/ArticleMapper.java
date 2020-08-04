@@ -8,7 +8,7 @@ import org.mapstruct.factory.Mappers;
 public interface ArticleMapper {
     ArticleMapper INSTANCE = Mappers.getMapper(ArticleMapper.class);
 
-    Article itemDTOToItem(ArticleDTO itemDTO);
+    Article articleDTOToArticle(ArticleDTO articleDTO);
 
-    ArticleDTO itemToItemDTO(Article item);
+    ArticleDTO articleToArticleDTO(Article article);
 }
