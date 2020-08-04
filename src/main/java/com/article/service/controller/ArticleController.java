@@ -1,8 +1,6 @@
 package com.article.service.controller;
 
 import com.article.service.dto.ArticleDTO;
-import com.article.service.dto.ArticleMapper;
-import com.article.service.entity.Article;
 import com.article.service.service.ArticleService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
