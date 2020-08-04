@@ -13,6 +13,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -50,7 +51,8 @@ class UserServiceTest {
 
     @Test
     void findByArticlesQuantity() {
-        when(userRepo.findAll()).thenReturn(userList);
+        List<User> testList = Arrays.asList(userList.get(0), userList.get(0), userList.get(1));
+        when(userRepo.findAll()).thenReturn(testList);
         List<UserDTO> actualList = userService.findByArticlesQuantity();
         assertEquals(1, actualList.size());
         verify(userRepo, times(1)).findAll();

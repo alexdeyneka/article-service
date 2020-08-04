@@ -12,6 +12,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -46,10 +50,11 @@ public class UserService {
         return entityDTOList;
     }
 
-    // finds the users who have more than 3 articles
+    // finds the unique users who have more than 3 articles
     public List<UserDTO> findByArticlesQuantity() {
         List<User> entityList = userRepo.findAll().stream()
                 .filter(element -> element.getArticles().size() > 3)
+                .filter(distinctByKey(User::getName))
                 .collect(Collectors.toList());
         List<UserDTO> entityDTOList = new ArrayList<>();
         entityList.forEach(element -> entityDTOList.add(UserMapper.INSTANCE.userToUserDTO(element)));
@@ -60,5 +65,11 @@ public class UserService {
     public UserDTO saveUser(UserDTO userDTO) {
         User savedUser = userRepo.save(UserMapper.INSTANCE.userDTOToUser(userDTO));
         return UserMapper.INSTANCE.userToUserDTO(savedUser);
+    }
+
+    // allows to get users with distinct names
+    public static <T> Predicate<T> distinctByKey(Function<? super T, ?> keyExtractor) {
+        Set<Object> seen = ConcurrentHashMap.newKeySet();
+        return t -> seen.add(keyExtractor.apply(t));
     }
 }
