@@ -35,6 +35,8 @@ Run the following maven command:
 To launch the application 
 1) Start ArticleServiceApplication.java: open it in Intellij IDEA, and press Ctrl + Shift + F10
 2) Import resources/article-service.postman_collection.json to Postman
-3) You are welcome to run Postman requests with default or custom payload
+3) First of all run generateFWT POST request in order to get FWT token
+4) Copy the token and paste it to <Authorization -> Barear Token -> Token> field of each requests
+5) You are welcome to run Postman requests with default or custom payload
 ```
 
