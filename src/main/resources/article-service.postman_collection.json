@@ -14,7 +14,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NjU3MTY1NywiaWF0IjoxNTk2NTUzNjU3fQ.ZK8ZFwq8wPlg8mqwnaBUWhmpTib6vlXcPjW7Oypv7nB6Z17ySMum8c40lgTltRKCBFgMtg46JxIFz83zv8XDdA",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NjcxOTUxOSwiaWF0IjoxNTk2NzAxNTE5fQ.ICQuGmadQC9kpD8gFYjRYKsPYRG_FHpPsnH_9-gRidi8iigZ9GZnSnHgI71tV7hUjCrlgcfeWb95DXdTVnkGNg",
 							"type": "string"
 						}
 					]
@@ -44,7 +44,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NjU3MTY1NywiaWF0IjoxNTk2NTUzNjU3fQ.ZK8ZFwq8wPlg8mqwnaBUWhmpTib6vlXcPjW7Oypv7nB6Z17ySMum8c40lgTltRKCBFgMtg46JxIFz83zv8XDdA",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NjcxOTUxOSwiaWF0IjoxNTk2NzAxNTE5fQ.ICQuGmadQC9kpD8gFYjRYKsPYRG_FHpPsnH_9-gRidi8iigZ9GZnSnHgI71tV7hUjCrlgcfeWb95DXdTVnkGNg",
 							"type": "string"
 						}
 					]
@@ -80,7 +80,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NjU3MTY1NywiaWF0IjoxNTk2NTUzNjU3fQ.ZK8ZFwq8wPlg8mqwnaBUWhmpTib6vlXcPjW7Oypv7nB6Z17ySMum8c40lgTltRKCBFgMtg46JxIFz83zv8XDdA",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NjcxOTUxOSwiaWF0IjoxNTk2NzAxNTE5fQ.ICQuGmadQC9kpD8gFYjRYKsPYRG_FHpPsnH_9-gRidi8iigZ9GZnSnHgI71tV7hUjCrlgcfeWb95DXdTVnkGNg",
 							"type": "string"
 						}
 					]
@@ -116,7 +116,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NjU3MTY1NywiaWF0IjoxNTk2NTUzNjU3fQ.ZK8ZFwq8wPlg8mqwnaBUWhmpTib6vlXcPjW7Oypv7nB6Z17ySMum8c40lgTltRKCBFgMtg46JxIFz83zv8XDdA",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NjcxOTUxOSwiaWF0IjoxNTk2NzAxNTE5fQ.ICQuGmadQC9kpD8gFYjRYKsPYRG_FHpPsnH_9-gRidi8iigZ9GZnSnHgI71tV7hUjCrlgcfeWb95DXdTVnkGNg",
 							"type": "string"
 						}
 					]
@@ -154,7 +154,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\": 88,\r\n    \"name\": \"User88\",\r\n    \"age\": 33,\r\n    \"articles\": [\r\n        {\r\n            \"id\": 288,\r\n            \"text\": \"article_content288\",\r\n            \"color\": \"WHITE\"\r\n        }\r\n    ]\r\n}",
+					"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"password\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -162,15 +162,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/user/save",
+					"raw": "http://localhost:8081/authenticate",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8081",
 					"path": [
-						"user",
-						"save"
+						"authenticate"
 					]
 				}
 			},
@@ -184,7 +183,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NjU3MTY1NywiaWF0IjoxNTk2NTUzNjU3fQ.ZK8ZFwq8wPlg8mqwnaBUWhmpTib6vlXcPjW7Oypv7nB6Z17ySMum8c40lgTltRKCBFgMtg46JxIFz83zv8XDdA",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NjcxOTUxOSwiaWF0IjoxNTk2NzAxNTE5fQ.ICQuGmadQC9kpD8gFYjRYKsPYRG_FHpPsnH_9-gRidi8iigZ9GZnSnHgI71tV7hUjCrlgcfeWb95DXdTVnkGNg",
 							"type": "string"
 						}
 					]
