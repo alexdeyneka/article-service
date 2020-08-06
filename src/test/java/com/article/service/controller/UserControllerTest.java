@@ -7,12 +7,12 @@ import com.article.service.jwt_config.JwtTokenUtil;
 import com.article.service.service.JwtUserDetailsService;
 import com.article.service.service.UserService;
 import com.article.service.utils.TestDataGenerator;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.DisplayNameGenerator;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
@@ -31,6 +31,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @ExtendWith(SpringExtension.class)
 @WebMvcTest(UserController.class)
+@AutoConfigureMockMvc(addFilters = false)
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 class UserControllerTest {
 
@@ -52,7 +53,6 @@ class UserControllerTest {
     private final List<UserDTO> userDTOList = new TestDataGenerator().generateUserDTOList();
 
     @Test
-    @Disabled
     void findUserByAge() throws Exception {
         given(userService.findByAge(anyInt())).willReturn(userDTOList);
         this.mockMvc.perform(get("/user/age")
@@ -66,7 +66,6 @@ class UserControllerTest {
     }
 
     @Test
-    @Disabled
     void findUserByArticle() throws Exception {
         given(userService.findByArticleColor(any(Color.class))).willReturn(userDTOList);
         this.mockMvc.perform(get("/user/color")
@@ -80,7 +79,6 @@ class UserControllerTest {
     }
 
     @Test
-    @Disabled
     void findUserWithMoreThanThreeArticles() throws Exception {
         given(userService.findByArticlesQuantity()).willReturn(userDTOList);
         this.mockMvc.perform(get("/user/quantity"))
@@ -96,7 +94,6 @@ class UserControllerTest {
     }
 
     @Test
-    @Disabled
     void saveUser() throws Exception {
         given(userService.saveUser(any(UserDTO.class))).willReturn(userDTOList.get(0));
         this.mockMvc.perform(post("/user/save")
