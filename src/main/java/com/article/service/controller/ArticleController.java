@@ -21,7 +21,9 @@ public class ArticleController {
 
     @PostMapping("/save")
     public ResponseEntity<ArticleDTO> saveArticle(@RequestBody ArticleDTO articleDTO) {
+        log.debug("About to save " + articleDTO);
         ArticleDTO savedArticleDTO = articleService.saveArticle(articleDTO);
+        log.debug(articleDTO + " saved successfully");
         return ResponseEntity.status(HttpStatus.CREATED).body(savedArticleDTO);
     }
 }
